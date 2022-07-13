@@ -84,7 +84,7 @@ pipeline {
           echo "building the artifact"
           script{
          sh '''
-            /kaniko/executor --context `pwd` --destination irs123/kaniko-test:latest
+            /kaniko/executor --context `pwd` --destination gcr.io/firm-retina-349011/hello-world:latest
           '''
           }
         }
