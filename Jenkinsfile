@@ -78,13 +78,13 @@ pipeline {
         }
       }
     }
-     stage('Docker build') {
+     stage('Docker build and publish') {
       steps {
         container('kaniko') {
           echo "building the artifact"
           script{
          sh '''
-            /kaniko/executor --context `pwd` --destination gcr.io/firm-retina-349011/hello-world:latest
+            /kaniko/executor --context `pwd` --destination gcr.io/firm-retina-349011/hello-world:v1.1
           '''
           }
         }
